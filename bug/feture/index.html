@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Master Configuration – Add</title>
+
+<style>
+:root {
+  --primary: #2A00B2;
+  --bg: #E5E8FF;
+  --card: #F7F8FF;
+  --border: #c7c7d9;
+}
+
+* { box-sizing: border-box; font-family: Arial, sans-serif; }
+
+body {
+  margin: 0;
+  padding: 30px;
+  background: #f2f3ff;
+}
+
+.container {
+  max-width: 1300px;
+  margin: auto;
+  background: var(--bg);
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.12);
+}
+
+h2 {
+  margin-top: 0;
+  color: var(--primary);
+}
+
+.section {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 18px;
+  margin-bottom: 20px;
+}
+
+.section-title {
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+/* Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 16px;
+}
+
+/* Inputs */
+label {
+  font-size: 13px;
+  margin-bottom: 5px;
+  display: block;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 9px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+}
+
+textarea { resize: none; height: 70px; }
+
+.phone-group {
+  display: flex;
+  gap: 8px;
+}
+
+.phone-group select {
+  width: 90px;
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+}
+
+/* Checkbox tiles */
+.tiles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+  gap: 12px;
+}
+
+.tile {
+  border: 1px solid var(--border);
+  padding: 10px;
+  border-radius: 8px;
+  background: #fff;
+}
+
+/* Image preview */
+.preview {
+  margin-top: 6px;
+  max-height: 60px;
+}
+
+/* Button */
+.actions {
+  text-align: center;
+  margin-top: 20px;
+}
+
+button {
+  background: var(--primary);
+  color: #fff;
+  padding: 12px 35px;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  cursor: pointer;
+  box-shadow: 0 6px 12px rgba(0,0,0,.25);
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <h2>Master Configuration – Add New</h2>
+
+  <!-- COMPANY INFO -->
+  <div class="section">
+    <div class="section-title">Company Information</div>
+
+    <div class="grid">
+      <div>
+        <label>Client Code *</label>
+        <input id="clientCode" required>
+      </div>
+      <div>
+        <label>Client Name *</label>
+        <input id="clientName" required>
+      </div>
+      <div>
+        <label>Email *</label>
+        <input id="email" type="email">
+      </div>
+      <div>
+        <label>Website</label>
+        <input id="website">
+      </div>
+      <div>
+        <label>TRN</label>
+        <input id="trn">
+      </div>
+      <div>
+        <label>Address</label>
+        <textarea id="address"></textarea>
+      </div>
+
+      <!-- Phones -->
+      <div>
+        <label>Tel 1</label>
+        <div class="phone-group">
+          <select id="tel1cc"><option>+971</option></select>
+          <input id="tel1" maxlength="12">
+        </div>
+      </div>
+      <div>
+        <label>Tel 2</label>
+        <div class="phone-group">
+          <select id="tel2cc"><option>+971</option></select>
+          <input id="tel2" maxlength="12">
+        </div>
+      </div>
+
+      <div>
+        <label>Fax 1</label>
+        <div class="phone-group">
+          <select id="fax1cc"><option>+971</option></select>
+          <input id="fax1" maxlength="12">
+        </div>
+      </div>
+      <div>
+        <label>Fax 2</label>
+        <div class="phone-group">
+          <select id="fax2cc"><option>+971</option></select>
+          <input id="fax2" maxlength="12">
+        </div>
+      </div>
+
+      <div>
+        <label>Custom 1</label>
+        <input id="custom1" type="color" value="#2A00B2">
+      </div>
+      <div>
+        <label>Custom 2</label>
+        <input id="custom2" type="color">
+      </div>
+
+      <div>
+        <label>Face Unlock Timeout (ms)</label>
+        <input id="faceTimeout" type="number" value="5000">
+      </div>
+    </div>
+  </div>
+
+  <!-- FILES -->
+  <div class="section">
+    <div class="section-title">Images</div>
+    <div class="grid">
+      <div>
+        <label>Sidebar Logo</label>
+        <input type="file" accept="image/png,image/jpeg" onchange="previewImage(this,'p1',46,42)">
+        <img id="p1" class="preview">
+      </div>
+      <div>
+        <label>Sidebar Open Logo</label>
+        <input type="file" accept="image/png,image/jpeg" onchange="previewImage(this,'p2',475,192)">
+        <img id="p2" class="preview">
+      </div>
+      <div>
+        <label>Login Image</label>
+        <input type="file" accept="image/png,image/jpeg" onchange="previewImage(this,'p3',404,404)">
+        <img id="p3" class="preview">
+      </div>
+      <div>
+        <label>Invoice Header</label>
+        <input type="file" accept="image/png,image/jpeg" onchange="previewImage(this,'p4',935,103)">
+        <img id="p4" class="preview">
+      </div>
+    </div>
+  </div>
+
+  <!-- MODULES -->
+  <div class="section">
+    <div class="section-title">Module Configuration</div>
+    <div class="tiles">
+      <label class="tile"><input type="checkbox" id="timeMgmt"> Time Management</label>
+      <label class="tile"><input type="checkbox" id="vehicleMgmt"> Vehicle Management</label>
+      <label class="tile"><input type="checkbox" id="inventory"> Inventory</label>
+      <label class="tile"><input type="checkbox" id="faceUnlock"> Face Unlock</label>
+      <label class="tile"><input type="checkbox" id="jobCard"> Add Job Card Service/Part</label>
+      <label class="tile"><input type="checkbox" id="quotation" checked disabled> Quotation (always enabled)</label>
+    </div>
+  </div>
+
+  <!-- GLOBAL -->
+  <div class="section">
+    <div class="section-title">Globalisation</div>
+    <div class="grid">
+      <div>
+        <label>Date Format</label>
+        <select id="dateFormat">
+          <option>DD-MM-YYYY</option>
+          <option>YYYY-MM-DD</option>
+        </select>
+      </div>
+      <div>
+        <label>Number Format</label>
+        <select id="numberFormat">
+          <option value="en-IN">Lakh (en-IN)</option>
+          <option value="en-US">Million (en-US)</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div class="actions">
+    <button onclick="saveConfig()">Add Configuration</button>
+  </div>
+</div>
+
+<script>
+/* INIT STORAGE */
+if (!localStorage.masterConfig) {
+  localStorage.masterConfig = JSON.stringify([]);
+}
+
+/* PHONE DIGITS ONLY */
+document.querySelectorAll("input[maxlength]").forEach(i => {
+  i.addEventListener("input", () => i.value = i.value.replace(/\D/g,''));
+});
+
+/* MODULE DEPENDENCY */
+document.getElementById("timeMgmt").addEventListener("change", e => {
+  if (e.target.checked) {
+    document.getElementById("vehicleMgmt").checked = true;
+  }
+});
+
+/* IMAGE VALIDATION + PREVIEW */
+function previewImage(input, imgId, maxW, maxH) {
+  const file = input.files[0];
+  if (!file) return;
+
+  if (!["image/png","image/jpeg"].includes(file.type)) {
+    alert("Only PNG/JPG allowed");
+    input.value="";
+    return;
+  }
+
+  const img = new Image();
+  img.onload = () => {
+    if (img.width > maxW || img.height > maxH) {
+      alert(`Max size ${maxW}x${maxH}px`);
+      input.value="";
+    } else {
+      document.getElementById(imgId).src = img.src;
+    }
+  };
+  img.src = URL.createObjectURL(file);
+}
+
+/* SAVE */
+function saveConfig() {
+  const data = {
+    _id: Date.now() + Math.random(),
+    companyInfo: {
+      clientCode: clientCode.value,
+      clientName: clientName.value,
+      email: email.value,
+      website: website.value,
+      TRN: trn.value,
+      address: address.value,
+      tel1: { countryCode: tel1cc.value, number: tel1.value },
+      tel2: { countryCode: tel2cc.value, number: tel2.value },
+      fax1: { countryCode: fax1cc.value, number: fax1.value },
+      fax2: { countryCode: fax2cc.value, number: fax2.value },
+      custom1: custom1.value,
+      custom2: custom2.value,
+      faceUnlockTimeout: faceTimeout.value
+    },
+    moduleConfiguration: {
+      timeManagement: timeMgmt.checked,
+      vehicleManagement: vehicleMgmt.checked,
+      inventory: inventory.checked,
+      faceUnlock: faceUnlock.checked,
+      addJobCardServicePart: jobCard.checked,
+      quotation: true
+    },
+    globalisation: {
+      dateFormat: dateFormat.value,
+      numberFormat: numberFormat.value
+    }
+  };
+
+  const arr = JSON.parse(localStorage.masterConfig);
+  arr.push(data);
+  localStorage.masterConfig = JSON.stringify(arr);
+
+  alert("Configuration added successfully!");
+}
+</script>
+
+</body>
+</html>
