@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin Controller</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="app">
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="logo">Logo</div>
+  </aside>
+
+  <!-- Main -->
+  <main class="main">
+
+    <!-- Header -->
+    <header class="header">
+      <h2>ADMIN CONTROLLER</h2>
+      <div class="user">
+        <span>admin</span>
+        <img src="https://i.pravatar.cc/40" alt="user" />
+      </div>
+    </header>
+
+    <!-- Tabs -->
+    <div class="tabs">
+      <button class="tab active">Configuration</button>
+      <button class="tab">Work Flow Configuration</button>
+      <button class="tab">Excel Data</button>
+    </div>
+
+    <!-- Form Card -->
+    <div class="card">
+      <form class="form-grid">
+
+        <div>
+          <label>Client Code</label>
+          <input type="text">
+        </div>
+
+        <div>
+          <label>Client Name</label>
+          <input type="text">
+        </div>
+
+        <div>
+          <label>Currency Code</label>
+          <select>
+            <option>UAE Dirham (AED)</option>
+          </select>
+        </div>
+
+        <div>
+          <label>Address</label>
+          <textarea></textarea>
+        </div>
+
+        <div>
+          <label>Email</label>
+          <input type="email">
+        </div>
+
+        <div></div>
+
+        <div>
+          <label>Sidebar Logo (Max 46 × 42)</label>
+          <input type="file">
+        </div>
+
+        <div>
+          <label>Sidebar Open Logo (Max 475 × 192)</label>
+          <input type="file">
+        </div>
+
+        <div>
+          <label>Login Image (Max 404 × 404)</label>
+          <input type="file">
+        </div>
+
+        <div>
+          <label>Invoice Header Image (Max 935 × 103)</label>
+          <input type="file">
+        </div>
+
+        <div>
+          <label>Website</label>
+          <input type="text">
+        </div>
+
+        <div>
+          <label>TRN</label>
+          <input type="text">
+        </div>
+
+        <div>
+          <label>Tel/Fax</label>
+          <div class="phone">
+            <select>
+              <option>+971</option>
+            </select>
+            <input type="text">
+          </div>
+        </div>
+
+        <div>
+          <label>Tel/Fax</label>
+          <div class="phone">
+            <select>
+              <option>+971</option>
+            </select>
+            <input type="text">
+          </div>
+        </div>
+
+      </form>
+    </div>
+
+  </main>
+</div>
+
+
+<div class="config-wrapper">
+
+  <!-- Custom Fields -->
+  <div class="grid-2">
+    <div>
+      <label>Custom 1</label>
+      <input type="text" value="">
+    </div>
+    <div>
+      <label>Custom 2</label>
+      <input type="text">
+    </div>
+  </div>
+
+  <!-- Face Unlock Timeout -->
+  <div class="full-width">
+    <label>Face Unlock Time Out</label>
+    <input type="number" value="5000">
+  </div>
+
+  <!-- Module Configuration -->
+  <div class="box">
+    <h4>Module Configuration</h4>
+    <label class="sub">Module</label>
+
+    <div class="checkbox-grid">
+      <label><input type="checkbox" checked> Time Mgmt</label>
+      <label><input type="checkbox" checked> Vehicle Mgmt</label>
+      <label><input type="checkbox"> Inventory</label>
+      <label><input type="checkbox"> Face Unlock</label>
+      <label><input type="checkbox"> Enable Add Job Card Service</label>
+      <label><input type="checkbox"> Enable Add Job Card Part</label>
+    </div>
+  </div>
+
+  <!-- Globalisation -->
+  <div class="box">
+    <h4>Globalisation</h4>
+
+    <div class="grid-2">
+      <div>
+        <label>Date Format</label>
+        <select>
+          <option>DD-MM-YYYY</option>
+        </select>
+      </div>
+
+      <div>
+        <label>Number Format</label>
+        <select>
+          <option>10,00,000 (Lakh Format)</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <!-- Update Button -->
+  <div class="center">
+    <button class="btn-primary">Update</button>
+  </div>
+
+</div>
+
+</body>
+</html>
+
+
+</body>
+</html>
